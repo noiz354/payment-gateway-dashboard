@@ -17,6 +17,7 @@ app.use('/api/transactions', transactionsRouter);
 app.use('/api/invoices', invoicesRouter);
 app.use('/api/payouts', payoutsRouter);
 app.use('/api/customers', customersRouter);
+app.use('/api/webhooks', webhookRouter());
 app.use('/webhooks', webhookRouter());
 // Serve the existing prototype when running the BFF locally.
 app.use(express.static(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')));

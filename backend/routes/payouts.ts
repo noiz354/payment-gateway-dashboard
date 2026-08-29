@@ -2,6 +2,9 @@ import { Router } from 'express';
 import { xenditClient } from '../lib/xendit.js';
 
 export const payoutsRouter = Router();
+payoutsRouter.get('/channels', async (req, res, next) => {
+  try { res.json(await xenditClient.Payout.getPayoutChannels(req.query.currency ? { currency: String(req.query.currency) } : undefined)); } catch (error) { next(error); }
+});
 payoutsRouter.get('/', async (req, res, next) => {
   try {
     if (req.query.id) return res.json(await xenditClient.Payout.getPayoutById({ id: String(req.query.id) }));

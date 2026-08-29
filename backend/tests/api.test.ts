@@ -19,6 +19,7 @@ beforeAll(async () => {
       else if (url.startsWith('/transactions')) response = { data: [{ id: 'txn_mock', status: 'SUCCEEDED', amount: 1000 }] };
       else if (url.startsWith('/v2/invoices') && req.method === 'POST') response = { id: 'inv_mock', status: 'PENDING', available_banks: [], available_retail_outlets: [], available_ewallets: [], available_qr_codes: [], available_direct_debits: [], available_paylaters: [] };
       else if (url.startsWith('/v2/invoices')) response = [{ id: 'inv_mock', status: 'PAID', available_banks: [], available_retail_outlets: [], available_ewallets: [], available_qr_codes: [], available_direct_debits: [], available_paylaters: [] }];
+      else if (url.startsWith('/payouts_channels')) response = [{ channel_code: 'MOCK_BANK', channel_category: 'BANK', currency: 'IDR', channel_name: 'Mock Bank', amount_limits: null }];
       else if (url.startsWith('/v2/payouts') && req.method === 'POST') response = { id: 'payout_mock', status: 'ACCEPTED' };
       else if (url.startsWith('/v2/payouts')) response = { data: [{ id: 'payout_mock' }] };
       else if (url.startsWith('/customers') && req.method === 'POST') response = { id: 'cus_mock', reference_id: 'customer-1', addresses: null, identity_accounts: null, kyc_documents: null };
@@ -43,7 +44,8 @@ describe('Xendit BFF endpoints (SDK pointed at mock server)', () => {
     expect((await request(app).get('/api/invoices')).body[0].id).toBe('inv_mock');
     expect((await request(app).post('/api/invoices').send({ amount: 1000, externalId: 'test' })).status).toBe(201);
   });
-  it('GET and POST /api/payouts', async () => {
+  it('GET payout channels and GET/POST /api/payouts', async () => {
+    expect((await request(app).get('/api/payouts/channels?currency=IDR')).body[0].channelCode).toBe('MOCK_BANK');
     expect((await request(app).get('/api/payouts?referenceId=ref-1')).body.data[0].id).toBe('payout_mock');
     expect((await request(app).post('/api/payouts').set('idempotency-key', 'payout-test').send({ amount: 1000, referenceId: 'ref-1' })).status).toBe(201);
   });
@@ -53,6 +55,7 @@ describe('Xendit BFF endpoints (SDK pointed at mock server)', () => {
   });
   it('verifies x-callback-token on webhook', async () => {
     expect((await request(app).post('/webhooks/xendit').send({ event: 'invoice.paid' })).status).toBe(401);
-    expect((await request(app).post('/webhooks/xendit').set('x-callback-token', 'test-webhook-token').send({ event: 'invoice.paid' })).text).toBe('ok');
+    expect((await request(app).post('/webhooks/xendit').set('x-callback-token', 'test-webhook-token').send({ event: 'invoice.paid' })).body.event).toBe('invoice.paid');
+    expect((await request(app).get('/api/webhooks')).body[0].event).toBe('invoice.paid');
   });
 });
