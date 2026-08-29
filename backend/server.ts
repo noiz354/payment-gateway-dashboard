@@ -12,6 +12,7 @@ import { webhookRouter } from './routes/webhooks.js';
 export const app = express();
 app.use(express.json());
 app.get('/health', (_req, res) => res.json({ ok: true }));
+app.get('/', (_req, res) => res.redirect('/screens/mobile/dashboard_home/code.html'));
 app.use('/api/balance', balanceRouter);
 app.use('/api/transactions', transactionsRouter);
 app.use('/api/invoices', invoicesRouter);
