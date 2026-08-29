@@ -19,7 +19,7 @@
     if (['transactions', 'transact', 'ledger'].includes(key)) return names.transactions;
     if (['payment links', 'links', 'payments'].includes(key)) return names.payment;
     if (key === 'subscriptions') return names.subscriptions;
-    if (key === 'qr codes') return `${names.qr}#qr-codes`;
+    if (key === 'qr codes') return names.qr;
     if (['disbursements', 'bulk payouts'].includes(key)) return names.payouts;
     if (['settings', 'developer settings'].includes(key)) return names.settings;
     if (key === 'reports' || key === 'reporting' || key === 'analytics') return names.reports;
@@ -31,6 +31,6 @@
   document.querySelectorAll('a[href="#"]').forEach((anchor) => {
     const label = [...anchor.childNodes].filter(node => node.nodeType === Node.TEXT_NODE).map(node => node.textContent).join(' ').trim() || anchor.textContent;
     const route = routeFor(label);
-    if (route) anchor.href = `${dir}${route}/code.html`;
+    if (route) anchor.href = `${dir}${route}/code.html${label.trim().toLowerCase() === 'qr codes' ? '#qr-codes' : ''}`;
   });
 })();
