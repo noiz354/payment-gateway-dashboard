@@ -130,19 +130,19 @@
 </div>
 <!-- Main Nav -->
 <div class="flex-1 overflow-y-auto space-y-1 px-3">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="/screens/desktop/dashboard_home_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="home">home</span>
 <span>Home</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-primary-fixed border-l-4 border-primary-fixed bg-on-secondary-fixed-variant/20 hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-primary-fixed border-l-4 border-primary-fixed bg-on-secondary-fixed-variant/20 hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="/screens/desktop/billing_invoices_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="payments">payments</span>
 <span>Payments</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="/screens/desktop/customer_directory_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
 <span>Customers</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="/screens/desktop/subscription_management_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="subscriptions">subscriptions</span>
 <span>Subscriptions</span>
 </a>
@@ -150,7 +150,7 @@
 <span class="material-symbols-outlined text-[20px]" data-icon="code">code</span>
 <span>Developer</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="/screens/desktop/developer_settings_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
 <span>Settings</span>
 </a>
@@ -161,7 +161,7 @@
 <span class="material-symbols-outlined text-[20px]" data-icon="swap_horiz">swap_horiz</span>
 <span>Switch Account</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="/screens/desktop/support_documentation_hub_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
 <span>Support</span>
 </a>
@@ -181,9 +181,9 @@
 </div>
 <!-- Central Nav -->
 <nav class="hidden md:flex items-center gap-6 h-full">
-<a class="h-full flex items-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all scale-95 duration-75 px-2" href="#">Dashboard</a>
-<a class="h-full flex items-center text-primary font-bold border-b-2 border-primary pb-1 hover:bg-surface-container-low transition-all scale-95 duration-75 px-2" href="#">Analytics</a>
-<a class="h-full flex items-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all scale-95 duration-75 px-2" href="#">Reports</a>
+<a class="h-full flex items-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all scale-95 duration-75 px-2" href="/screens/desktop/dashboard_home_desktop/code.html">Dashboard</a>
+<a class="h-full flex items-center text-primary font-bold border-b-2 border-primary pb-1 hover:bg-surface-container-low transition-all scale-95 duration-75 px-2" href="/screens/desktop/custom_reports_builder_desktop/code.html">Analytics</a>
+<a class="h-full flex items-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all scale-95 duration-75 px-2" href="/screens/desktop/custom_reports_builder_desktop/code.html">Reports</a>
 </nav>
 <!-- Actions -->
 <div class="flex items-center gap-4 flex-1 justify-end">
@@ -385,4 +385,8 @@
 </div>
 </main>
 </div>
+
+<script src="/screens/xendit-client.js"></script>
+<script>XenditDashboard.init('transactions', '/api/transactions');</script>
+<script src="/screens/navigation.js"></script>
 </body></html>

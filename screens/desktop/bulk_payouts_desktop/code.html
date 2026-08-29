@@ -144,38 +144,38 @@
 </div>
 <!-- Main Nav -->
 <div class="flex flex-col gap-1 flex-1">
-<a class="flex items-center gap-3 px-3 py-2 text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/20 transition-all rounded-lg group-hover:translate-x-1 duration-200" href="#">
+<a class="flex items-center gap-3 px-3 py-2 text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/20 transition-all rounded-lg group-hover:translate-x-1 duration-200" href="/screens/desktop/dashboard_home_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
 <span class="font-label-caps text-label-caps">Dashboard</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/20 transition-all rounded-lg group-hover:translate-x-1 duration-200" href="#">
+<a class="flex items-center gap-3 px-3 py-2 text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/20 transition-all rounded-lg group-hover:translate-x-1 duration-200" href="/screens/desktop/transaction_ledger_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="account_balance">account_balance</span>
 <span class="font-label-caps text-label-caps">Ledger</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/20 transition-all rounded-lg group-hover:translate-x-1 duration-200" href="#">
+<a class="flex items-center gap-3 px-3 py-2 text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/20 transition-all rounded-lg group-hover:translate-x-1 duration-200" href="/screens/desktop/customer_directory_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
 <span class="font-label-caps text-label-caps">Accounts</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 bg-primary text-on-primary rounded-xl font-bold group-hover:translate-x-1 duration-200" href="#">
+<a class="flex items-center gap-3 px-3 py-2 bg-primary text-on-primary rounded-xl font-bold group-hover:translate-x-1 duration-200" href="/screens/desktop/billing_invoices_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="payments">payments</span>
 <span class="font-label-caps text-label-caps">Payments</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/20 transition-all rounded-lg group-hover:translate-x-1 duration-200" href="#">
+<a class="flex items-center gap-3 px-3 py-2 text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/20 transition-all rounded-lg group-hover:translate-x-1 duration-200" href="/screens/desktop/custom_reports_builder_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="analytics">analytics</span>
 <span class="font-label-caps text-label-caps">Reporting</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/20 transition-all rounded-lg group-hover:translate-x-1 duration-200" href="#">
+<a class="flex items-center gap-3 px-3 py-2 text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/20 transition-all rounded-lg group-hover:translate-x-1 duration-200" href="/screens/desktop/detailed_audit_log_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="history">history</span>
 <span class="font-label-caps text-label-caps">Audit Log</span>
 </a>
 </div>
 <!-- Footer Nav -->
 <div class="flex flex-col gap-1 mt-auto pt-4 border-t border-on-surface-variant/30">
-<a class="flex items-center gap-3 px-3 py-2 text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/20 transition-all rounded-lg" href="#">
+<a class="flex items-center gap-3 px-3 py-2 text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/20 transition-all rounded-lg" href="/screens/desktop/support_documentation_hub_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="contact_support">contact_support</span>
 <span class="font-label-caps text-label-caps">Support</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/20 transition-all rounded-lg" href="#">
+<a class="flex items-center gap-3 px-3 py-2 text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/20 transition-all rounded-lg" href="/screens/desktop/developer_settings_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
 <span class="font-label-caps text-label-caps">Settings</span>
 </a>
@@ -304,4 +304,8 @@
 </div>
 </main>
 </div>
+
+<script src="/screens/xendit-client.js"></script>
+<script>XenditDashboard.init('payout-channels', '/api/payouts?referenceId=dashboard');</script>
+<script src="/screens/navigation.js"></script>
 </body></html>

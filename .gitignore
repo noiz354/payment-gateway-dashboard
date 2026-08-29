@@ -1,2 +1,5 @@
 # Local tooling / personal config
 .commandcode/
+backend/.env
+backend/node_modules/
+backend/dist/

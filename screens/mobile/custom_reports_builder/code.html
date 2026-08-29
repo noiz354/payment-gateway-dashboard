@@ -146,7 +146,7 @@
 </div>
 </div>
 <div class="flex-1 flex flex-col gap-1 px-stack-sm overflow-y-auto">
-<a class="flex items-center gap-stack-sm px-stack-sm py-2 rounded-md text-secondary hover:bg-surface-container-low transition-all duration-200 ease-in-out" href="#">
+<a class="flex items-center gap-stack-sm px-stack-sm py-2 rounded-md text-secondary hover:bg-surface-container-low transition-all duration-200 ease-in-out" href="/screens/mobile/dashboard_home/code.html">
 <span class="material-symbols-outlined">dashboard</span>
 <span class="font-body-md text-body-md">Dashboard</span>
 </a>
@@ -154,20 +154,20 @@
 <span class="material-symbols-outlined">store</span>
 <span class="font-body-md text-body-md">Merchant Profile</span>
 </a>
-<a class="flex items-center gap-stack-sm px-stack-sm py-2 rounded-md text-secondary hover:bg-surface-container-low transition-all duration-200 ease-in-out" href="#">
+<a class="flex items-center gap-stack-sm px-stack-sm py-2 rounded-md text-secondary hover:bg-surface-container-low transition-all duration-200 ease-in-out" href="/screens/mobile/balance_history/code.html">
 <span class="material-symbols-outlined">account_balance_wallet</span>
 <span class="font-body-md text-body-md">Settlements</span>
 </a>
-<a class="flex items-center gap-stack-sm px-stack-sm py-2 rounded-md text-secondary hover:bg-surface-container-low transition-all duration-200 ease-in-out" href="#">
+<a class="flex items-center gap-stack-sm px-stack-sm py-2 rounded-md text-secondary hover:bg-surface-container-low transition-all duration-200 ease-in-out" href="/screens/mobile/webhook_logs/code.html">
 <span class="material-symbols-outlined">history_edu</span>
 <span class="font-body-md text-body-md">Audit Logs</span>
 </a>
 <!-- Active Tab Intent Fallback: "Reports" aligns with Custom Reports Builder -->
-<a class="flex items-center gap-stack-sm px-stack-sm py-2 bg-secondary-container text-on-secondary-container border-l-4 border-primary transition-all duration-200 ease-in-out" href="#">
+<a class="flex items-center gap-stack-sm px-stack-sm py-2 bg-secondary-container text-on-secondary-container border-l-4 border-primary transition-all duration-200 ease-in-out" href="/screens/mobile/custom_reports_builder/code.html">
 <span class="material-symbols-outlined filled">analytics</span>
 <span class="font-body-md text-body-md font-semibold">Reports</span>
 </a>
-<a class="flex items-center gap-stack-sm px-stack-sm py-2 rounded-md text-secondary hover:bg-surface-container-low transition-all duration-200 ease-in-out" href="#">
+<a class="flex items-center gap-stack-sm px-stack-sm py-2 rounded-md text-secondary hover:bg-surface-container-low transition-all duration-200 ease-in-out" href="/screens/mobile/developer_settings/code.html">
 <span class="material-symbols-outlined">settings</span>
 <span class="font-body-md text-body-md">Settings</span>
 </a>
@@ -353,7 +353,7 @@
 </button>
 </div>
 </div>
-<a class="block text-center mt-stack-md font-body-sm font-semibold text-primary hover:underline" href="#">View All Reports</a>
+<a class="block text-center mt-stack-md font-body-sm font-semibold text-primary hover:underline" href="/screens/mobile/custom_reports_builder/code.html">View All Reports</a>
 </div>
 <!-- Info Card -->
 <div class="bg-surface-container border border-outline-variant rounded-xl p-gutter shadow-sm relative overflow-hidden">
@@ -371,7 +371,7 @@
 </div>
 <!-- Bottom Navigation (Mobile) -->
 <nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-stack-sm pb-safe bg-surface-container-lowest border-t border-outline-variant z-50 flat no shadows">
-<a class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-1 hover:text-primary transition-colors" href="#">
+<a class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-1 hover:text-primary transition-colors" href="/screens/mobile/payment_links_invoices/code.html">
 <span class="material-symbols-outlined">payments</span>
 <span class="font-label-caps text-label-caps mt-1">Payments</span>
 </a>
@@ -384,9 +384,12 @@
 <span class="font-label-caps text-label-caps mt-1">Users</span>
 </a>
 <!-- Active Tab Intent Fallback: "Reports" aligns with Custom Reports Builder -->
-<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-95 transition-transform duration-150" href="#">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-95 transition-transform duration-150" href="/screens/mobile/custom_reports_builder/code.html">
 <span class="material-symbols-outlined filled">analytics</span>
 <span class="font-label-caps text-label-caps mt-1 font-bold">Reports</span>
 </a>
 </nav>
+<script src="/screens/xendit-client.js"></script>
+<script>XenditDashboard.init('report', '/api/transactions');</script>
+<script src="/screens/navigation.js"></script>
 </body></html>

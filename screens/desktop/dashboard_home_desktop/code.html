@@ -149,19 +149,19 @@
 </div>
 <!-- Navigation Links -->
 <nav class="flex-1 px-3 space-y-1 overflow-y-auto">
-<a class="flex items-center gap-3 px-3 py-2 rounded text-primary-fixed border-l-4 border-primary-fixed bg-on-secondary-fixed-variant/20 hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded text-primary-fixed border-l-4 border-primary-fixed bg-on-secondary-fixed-variant/20 hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="/screens/desktop/dashboard_home_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="home">home</span>
 <span class="font-body-md text-body-md">Home</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant hover:text-inverse-on-surface border-l-4 border-transparent hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant hover:text-inverse-on-surface border-l-4 border-transparent hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="/screens/desktop/billing_invoices_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="payments">payments</span>
 <span class="font-body-md text-body-md">Payments</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant hover:text-inverse-on-surface border-l-4 border-transparent hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant hover:text-inverse-on-surface border-l-4 border-transparent hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="/screens/desktop/customer_directory_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
 <span class="font-body-md text-body-md">Customers</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant hover:text-inverse-on-surface border-l-4 border-transparent hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant hover:text-inverse-on-surface border-l-4 border-transparent hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="/screens/desktop/subscription_management_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="subscriptions">subscriptions</span>
 <span class="font-body-md text-body-md">Subscriptions</span>
 </a>
@@ -169,7 +169,7 @@
 <span class="material-symbols-outlined text-[20px]" data-icon="code">code</span>
 <span class="font-body-md text-body-md">Developer</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant hover:text-inverse-on-surface border-l-4 border-transparent hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded text-on-surface-variant hover:text-inverse-on-surface border-l-4 border-transparent hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="/screens/desktop/developer_settings_desktop/code.html">
 <span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
 <span class="font-body-md text-body-md">Settings</span>
 </a>
@@ -351,4 +351,7 @@
 </div>
 </main>
 </div>
+<script src="/screens/xendit-client.js"></script>
+<script>XenditDashboard.init('dashboard', '/api/transactions');</script>
+<script src="/screens/navigation.js"></script>
 </body></html>

@@ -129,20 +129,20 @@
 </div>
 <!-- Main Navigation -->
 <div class="flex-1 overflow-y-auto px-4 space-y-1">
-<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="/screens/desktop/dashboard_home_desktop/code.html">
 <span class="material-symbols-outlined">home</span>
 <span class="font-body-md text-body-md">Home</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="/screens/desktop/billing_invoices_desktop/code.html">
 <span class="material-symbols-outlined">payments</span>
 <span class="font-body-md text-body-md">Payments</span>
 </a>
 <!-- Active State -->
-<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-primary-fixed border-l-4 border-primary-fixed bg-on-secondary-fixed-variant/20 transition-colors cursor-pointer active:opacity-80" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-primary-fixed border-l-4 border-primary-fixed bg-on-secondary-fixed-variant/20 transition-colors cursor-pointer active:opacity-80" href="/screens/desktop/customer_directory_desktop/code.html">
 <span class="material-symbols-outlined">group</span>
 <span class="font-body-md text-body-md">Customers</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="/screens/desktop/subscription_management_desktop/code.html">
 <span class="material-symbols-outlined">subscriptions</span>
 <span class="font-body-md text-body-md">Subscriptions</span>
 </a>
@@ -150,7 +150,7 @@
 <span class="material-symbols-outlined">code</span>
 <span class="font-body-md text-body-md">Developer</span>
 </a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="#">
+<a class="flex items-center gap-3 px-3 py-2 rounded-DEFAULT text-on-surface-variant hover:text-inverse-on-surface hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer active:opacity-80" href="/screens/desktop/developer_settings_desktop/code.html">
 <span class="material-symbols-outlined">settings</span>
 <span class="font-body-md text-body-md">Settings</span>
 </a>
@@ -192,9 +192,9 @@
 </div>
 <!-- Center: Navigation Links (Secondary context if needed) -->
 <nav class="hidden md:flex items-center gap-6">
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all scale-95 duration-75 px-2 py-1 rounded" href="#">Dashboard</a>
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all scale-95 duration-75 px-2 py-1 rounded" href="#">Analytics</a>
-<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all scale-95 duration-75 px-2 py-1 rounded" href="#">Reports</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all scale-95 duration-75 px-2 py-1 rounded" href="/screens/desktop/dashboard_home_desktop/code.html">Dashboard</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all scale-95 duration-75 px-2 py-1 rounded" href="/screens/desktop/custom_reports_builder_desktop/code.html">Analytics</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-all scale-95 duration-75 px-2 py-1 rounded" href="/screens/desktop/custom_reports_builder_desktop/code.html">Reports</a>
 </nav>
 <!-- Right: Actions & Profile -->
 <div class="flex items-center gap-4">
@@ -389,4 +389,8 @@
 </div>
 </main>
 </div>
+
+<script src="/screens/xendit-client.js"></script>
+<script>XenditDashboard.init('customers', '/api/customers?referenceId=dashboard');</script>
+<script src="/screens/navigation.js"></script>
 </body></html>
