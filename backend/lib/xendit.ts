@@ -3,7 +3,7 @@ import { Xendit } from 'xendit-node';
 
 /** The only place the Xendit secret is consumed. Never import this module in browser code. */
 export const xenditClient = new Xendit({
-  secretKey: process.env.XENDIT_SECRET_KEY || 'test-only-no-real-key',
+  secretKey: process.env.XENDIT_SECRET_KEY!,
   xenditURL: process.env.XENDIT_URL,
 });
 
