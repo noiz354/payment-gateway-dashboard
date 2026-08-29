@@ -4,6 +4,11 @@ Index of every screen in the repository. Each folder contains `code.html` and a 
 
 ## Mobile / Responsive — Kinetic Enterprise
 
+> Navigation on every mobile screen is rendered by the shared
+> `screens/mobile/_shared/nav.js` (`NAV_CONFIG`) into `#app-nav-root` — bottom
+> tabs (Home, Transaksi, FAB "Buat", Saldo, Menu) + "Menu" bottom sheet on
+> mobile, sidebar on desktop. Screens contain no hardcoded navigation.
+
 | Screen | Folder | Title |
 | --- | --- | --- |
 | Home Overview | `screens/mobile/dashboard_home/` | Fintech Dashboard - Home Overview |

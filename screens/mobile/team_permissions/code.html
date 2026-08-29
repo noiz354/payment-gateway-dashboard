@@ -115,7 +115,8 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head>
+  <link rel="stylesheet" href="../_shared/nav.css"/>
+</head>
 <body class="bg-background text-on-background font-body-md min-h-screen flex flex-col md:flex-row">
 <!-- Mobile Top Navigation -->
 <header class="flex justify-between items-center px-gutter h-16 w-full max-w-container-max mx-auto fixed top-0 w-full z-50 border-b border-outline-variant dark:border-on-surface-variant bg-surface-container-lowest dark:bg-inverse-surface md:hidden">
@@ -125,58 +126,9 @@
 </div>
 <span class="material-symbols-outlined text-primary dark:text-primary-fixed">notifications</span>
 </header>
-<!-- Navigation Drawer (Desktop) -->
-<nav class="hidden lg:flex flex-col h-full py-stack-lg fixed left-0 top-0 h-full w-sidebar-width border-r border-outline-variant dark:border-on-surface-variant bg-surface-container-lowest dark:bg-inverse-surface z-40 transition-all duration-200 ease-in-out">
-<div class="px-gutter mb-8 flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-headline-md text-headline-md">
-                MA
-             </div>
-<div>
-<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed">Operations Lead</div>
-<div class="font-body-sm text-body-sm text-secondary dark:text-secondary-fixed-dim">Verified Merchant • Tier 3</div>
-</div>
-</div>
-<ul class="flex-1 flex flex-col gap-1 px-4">
-<li>
-<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant transition-colors" href="/screens/mobile/dashboard_home/code.html">
-<span class="material-symbols-outlined">dashboard</span>
-<span class="font-body-md text-body-md">Dashboard</span>
-</a>
-</li>
-<li>
-<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant transition-colors" href="#">
-<span class="material-symbols-outlined">store</span>
-<span class="font-body-md text-body-md">Merchant Profile</span>
-</a>
-</li>
-<li>
-<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant transition-colors" href="/screens/mobile/balance_history/code.html">
-<span class="material-symbols-outlined">account_balance_wallet</span>
-<span class="font-body-md text-body-md">Settlements</span>
-</a>
-</li>
-<li>
-<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant transition-colors" href="/screens/mobile/webhook_logs/code.html">
-<span class="material-symbols-outlined">history_edu</span>
-<span class="font-body-md text-body-md">Audit Logs</span>
-</a>
-</li>
-<li>
-<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant transition-colors" href="/screens/mobile/developer_settings/code.html">
-<span class="material-symbols-outlined">settings</span>
-<span class="font-body-md text-body-md">Settings</span>
-</a>
-</li>
-</ul>
-<div class="px-gutter mt-auto">
-<a class="flex items-center gap-3 px-4 py-2 rounded-lg text-secondary dark:text-secondary-fixed-dim bg-secondary-container dark:bg-on-secondary-fixed-variant text-on-secondary-container dark:text-secondary-fixed border-l-4 border-primary" href="#">
-<span class="material-symbols-outlined">group</span>
-<span class="font-body-md text-body-md font-semibold">Users</span>
-</a>
-</div>
-</nav>
+
 <!-- Main Content Area -->
-<main class="flex-1 lg:ml-sidebar-width pt-16 md:pt-0 pb-20 md:pb-0 min-h-screen">
+<main class="flex-1 md:ml-sidebar-width pt-16 md:pt-0 pb-20 md:pb-0 min-h-screen">
 <!-- Page Header -->
 <div class="px-gutter py-stack-lg border-b border-outline-variant bg-surface-container-lowest sticky top-0 md:top-0 z-30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
 <div>
@@ -342,24 +294,9 @@
 </div>
 </div>
 </main>
-<!-- Mobile Bottom Navigation -->
-<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-stack-sm pb-safe bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-on-surface-variant z-50 md:hidden">
-<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-secondary-fixed-dim px-4 py-1 hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform duration-150" href="/screens/mobile/payment_links_invoices/code.html">
-<span class="material-symbols-outlined">payments</span>
-<span class="font-label-caps text-label-caps mt-1">Payments</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-secondary-fixed-dim px-4 py-1 hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform duration-150" href="#">
-<span class="material-symbols-outlined">verified_user</span>
-<span class="font-label-caps text-label-caps mt-1">KYC</span>
-</a>
-<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl px-4 py-1 active:scale-95 transition-transform duration-150" href="#">
-<span class="material-symbols-outlined">group</span>
-<span class="font-label-caps text-label-caps mt-1">Users</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-secondary-fixed-dim px-4 py-1 hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform duration-150" href="/screens/mobile/custom_reports_builder/code.html">
-<span class="material-symbols-outlined">analytics</span>
-<span class="font-label-caps text-label-caps mt-1">Reports</span>
-</a>
-</nav>
+
 <script src="/screens/navigation.js"></script>
+<!-- Shared navigation chrome — Single Source of Truth: screens/mobile/_shared -->
+<div id="app-nav-root"></div>
+<script src="../_shared/nav.js"></script>
 </body></html>

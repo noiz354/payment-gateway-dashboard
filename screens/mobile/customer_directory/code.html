@@ -113,6 +113,7 @@
             background-color: #F1F5F9; /* Subtle hover shift per guidelines */
         }
     </style>
+<link rel="stylesheet" href="../_shared/nav.css"/>
 </head>
 <body class="font-body-md text-on-surface bg-background antialiased flex flex-col md:flex-row min-h-screen">
 <!-- Mobile Top App Bar (Shared Component) -->
@@ -127,40 +128,7 @@
 </button>
 </div>
 </header>
-<!-- Desktop Sidebar -->
-<aside class="hidden md:flex flex-col w-[260px] bg-[#0F172A] text-white fixed h-full z-40 border-r border-outline-variant/20">
-<div class="p-6">
-<h1 class="font-headline-md text-headline-md font-bold tracking-tight">Imanino Corps</h1>
-</div>
-<nav class="flex-1 px-4 py-2 space-y-1">
-<a class="flex items-center px-3 py-2 text-on-secondary-fixed-variant hover:bg-white/5 rounded-DEFAULT transition-colors" href="/screens/mobile/dashboard_home/code.html">
-<span class="material-symbols-outlined mr-3 text-[20px]" style="font-variation-settings: 'FILL' 0;">home</span>
-<span class="font-body-sm text-body-sm">Dashboard</span>
-</a>
-<div class="pt-4 pb-1">
-<p class="px-3 font-label-caps text-label-caps text-white/40">DIRECTORY</p>
-</div>
-<!-- Active State -->
-<a class="flex items-center px-3 py-2 bg-primary/20 border-l-4 border-primary text-white rounded-r-DEFAULT transition-colors" href="/screens/mobile/customer_directory/code.html">
-<span class="material-symbols-outlined mr-3 text-[20px]" style="font-variation-settings: 'FILL' 1;">group</span>
-<span class="font-body-sm text-body-sm font-medium">Customers</span>
-</a>
-<a class="flex items-center px-3 py-2 text-white/60 hover:bg-white/5 rounded-DEFAULT transition-colors" href="/screens/mobile/transaction_ledger/code.html">
-<span class="material-symbols-outlined mr-3 text-[20px]" style="font-variation-settings: 'FILL' 0;">receipt_long</span>
-<span class="font-body-sm text-body-sm">Transactions</span>
-</a>
-<a class="flex items-center px-3 py-2 text-white/60 hover:bg-white/5 rounded-DEFAULT transition-colors" href="/screens/mobile/balance_history/code.html">
-<span class="material-symbols-outlined mr-3 text-[20px]" style="font-variation-settings: 'FILL' 0;">account_balance_wallet</span>
-<span class="font-body-sm text-body-sm">Balance</span>
-</a>
-</nav>
-<div class="p-4">
-<a class="flex items-center px-3 py-2 text-white/60 hover:bg-white/5 rounded-DEFAULT transition-colors" href="/screens/mobile/developer_settings/code.html">
-<span class="material-symbols-outlined mr-3 text-[20px]" style="font-variation-settings: 'FILL' 0;">settings</span>
-<span class="font-body-sm text-body-sm">Settings</span>
-</a>
-</div>
-</aside>
+
 <!-- Main Content Area -->
 <main class="flex-1 md:ml-[260px] pb-24 md:pb-8 w-full max-w-[1440px] mx-auto px-4 md:px-gutter pt-6 md:pt-8 flex flex-col gap-6">
 <!-- Page Header & Actions -->
@@ -272,32 +240,10 @@
 </div>
 </div>
 </main>
-<!-- Mobile Bottom Nav Bar (Shared Component) -->
-<!-- Active intent: "Customers" is not in the list, fallback to Home for browsing context or suppress. Given JSON, active: Home -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-2 pb-safe bg-surface border-t border-outline-variant flat no shadows z-50">
-<a class="flex flex-col items-center justify-center text-primary bg-primary-container rounded-full px-4 py-1 active:scale-95 transition-transform duration-150" href="/screens/mobile/dashboard_home/code.html">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
-<span class="font-label-caps text-label-caps mt-1">Home</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant hover:bg-surface-container-highest active:scale-95 transition-transform duration-150 px-2 py-1 rounded-full" href="/screens/mobile/balance_history/code.html">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_balance_wallet</span>
-<span class="font-label-caps text-label-caps mt-1">Balance</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant hover:bg-surface-container-highest active:scale-95 transition-transform duration-150 px-2 py-1 rounded-full" href="/screens/mobile/transaction_ledger/code.html">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">receipt_long</span>
-<span class="font-label-caps text-label-caps mt-1">Transactions</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant hover:bg-surface-container-highest active:scale-95 transition-transform duration-150 px-2 py-1 rounded-full" href="/screens/mobile/payment_links_invoices/code.html">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">link</span>
-<span class="font-label-caps text-label-caps mt-1">Links</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant hover:bg-surface-container-highest active:scale-95 transition-transform duration-150 px-2 py-1 rounded-full" href="/screens/mobile/developer_settings/code.html">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
-<span class="font-label-caps text-label-caps mt-1">Settings</span>
-</a>
-</nav>
-
 <script src="/screens/xendit-client.js"></script>
 <script>XenditDashboard.init('customers', '/api/customers?referenceId=dashboard');</script>
 <script src="/screens/navigation.js"></script>
+<!-- Shared navigation chrome — Single Source of Truth: screens/mobile/_shared -->
+<div id="app-nav-root"></div>
+<script src="../_shared/nav.js"></script>
 </body></html>

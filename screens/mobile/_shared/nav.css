@@ -1,0 +1,381 @@
+/* =============================================================================
+   Shared navigation chrome — Single Source of Truth
+   Pairs with `nav.js` (NAV_CONFIG). Plain CSS on purpose: it must render
+   identically on every screen regardless of that screen's Tailwind config.
+   Palette = Kinetic Enterprise tokens (design-system/kinetic_enterprise).
+   ========================================================================== */
+
+#app-nav-root {
+  --nx-primary: #003fb1;
+  --nx-primary-container: #1a56db;
+  --nx-primary-fixed: #dbe1ff;
+  --nx-on-primary-fixed: #00174d;
+  --nx-primary-fixed-dim: #b5c4ff;
+  --nx-surface-lowest: #ffffff;
+  --nx-surface: #f7f9fb;
+  --nx-surface-high: #e6e8ea;
+  --nx-surface-highest: #e0e3e5;
+  --nx-on-surface: #191c1e;
+  --nx-on-surface-variant: #434654;
+  --nx-outline-variant: #c3c5d7;
+  --nx-sidebar-bg: #0f172a;
+  --nx-sidebar-hover: #1e293b;
+  --nx-sidebar-muted: #94a3b8;
+  --nx-sidebar-fg: #e2e8f0;
+  --nx-sidebar-label: #64748b;
+  --nx-bar-height: 64px;
+  --nx-side-width: 260px;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* ---------------------------------------------------------------- Mobile bar */
+.nx-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: calc(var(--nx-bar-height) + env(safe-area-inset-bottom, 0px));
+  padding: 0 6px env(safe-area-inset-bottom, 0px);
+  background: var(--nx-surface-lowest);
+  border-top: 1px solid var(--nx-surface-highest);
+  box-shadow: 0 -4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.nx-item {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  width: 100%;
+  max-width: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 6px 4px;
+  border-radius: 999px;
+  color: var(--nx-on-surface-variant);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nx-item .nx-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.nx-item .nx-label {
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.nx-item:hover { background: var(--nx-surface-high); }
+
+/* Active tab — Xendit-style pill, filled icon */
+.nx-item.nx-active,
+.nx-item.nx-active:hover {
+  background: var(--nx-primary-fixed);
+  color: var(--nx-on-primary-fixed);
+}
+
+.nx-item.nx-active .nx-icon { font-variation-settings: "FILL" 1, "wght" 500, "GRAD" 0, "opsz" 24; }
+
+/* Center FAB */
+.nx-fab {
+  position: relative;
+  margin-top: -22px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 76px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.nx-fab .nx-fab-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--nx-primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0, 63, 177, 0.35), 0 2px 4px rgba(15, 23, 42, 0.15);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.nx-fab .nx-fab-circle .nx-icon { font-size: 28px; }
+.nx-fab:hover .nx-fab-circle { background: var(--nx-primary-container); }
+.nx-fab:active .nx-fab-circle { transform: scale(0.94); }
+.nx-fab .nx-label {
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--nx-on-surface-variant);
+}
+
+/* ---------------------------------------------------------------- Bottom sheet */
+.nx-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 65;
+  background: rgba(15, 23, 42, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.22s ease;
+}
+
+.nx-overlay.nx-open { opacity: 1; pointer-events: auto; }
+
+.nx-sheet {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 100%);
+  z-index: 70;
+  width: 100%;
+  max-width: 448px; /* max-w-md */
+  max-height: calc(80vh + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  flex-direction: column;
+  background: var(--nx-surface-lowest);
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -12px 40px rgba(15, 23, 42, 0.25);
+  transition: transform 0.26s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.nx-sheet.nx-open { transform: translate(-50%, 0); }
+
+.nx-sheet-grabber {
+  width: 36px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--nx-surface-highest);
+  margin: 10px auto 2px;
+  flex: none;
+}
+
+.nx-sheet-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px 12px;
+  flex: none;
+}
+
+.nx-sheet-title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--nx-on-surface);
+}
+
+.nx-sheet-close {
+  border: 0;
+  background: var(--nx-surface);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nx-on-surface-variant);
+  cursor: pointer;
+}
+
+.nx-sheet-close:hover { background: var(--nx-surface-high); }
+
+.nx-sheet-body {
+  overflow-y: auto;
+  padding: 0 12px calc(16px + env(safe-area-inset-bottom, 0px));
+  -webkit-overflow-scrolling: touch;
+}
+
+.nx-sheet-label {
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--nx-on-surface-variant);
+  padding: 14px 10px 6px;
+}
+
+.nx-sheet-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 12px 10px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--nx-on-surface);
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.nx-sheet-item:hover { background: var(--nx-surface); }
+
+.nx-sheet-item .nx-icon {
+  font-size: 22px;
+  color: var(--nx-on-surface-variant);
+  flex: none;
+}
+
+.nx-sheet-item .nx-item-name { flex: 1; }
+
+.nx-sheet-item .nx-item-sub {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--nx-on-surface-variant);
+  margin-top: 1px;
+}
+
+.nx-sheet-item .nx-chevron {
+  font-size: 20px;
+  color: var(--nx-outline-variant);
+  flex: none;
+}
+
+.nx-sheet-item.nx-active { background: var(--nx-primary-fixed); }
+.nx-sheet-item.nx-active .nx-icon,
+.nx-sheet-item.nx-active .nx-chevron { color: var(--nx-primary); }
+.nx-sheet-item.nx-active .nx-item-name { color: var(--nx-on-primary-fixed); font-weight: 600; }
+
+/* The `hidden` attribute must win over the display rules above
+   (author styles normally override the UA's display:none for [hidden]). */
+.nx-overlay[hidden],
+.nx-sheet[hidden] { display: none; }
+
+/* body scroll lock while a sheet is open */
+.nx-sheet-open { overflow: hidden; }
+
+/* ---------------------------------------------------------------- Desktop sidebar */
+.nx-sidebar {
+  display: none;
+  position: fixed;
+  top: var(--nx-sidebar-top, 0px);
+  bottom: 0;
+  left: 0;
+  z-index: 40;
+  width: var(--nx-side-width);
+  flex-direction: column;
+  background: var(--nx-sidebar-bg);
+  color: var(--nx-sidebar-muted);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+/* Pages with a full-width fixed top app bar can push the sidebar down,
+   optionally per breakpoint: --nx-sidebar-top / -md / -lg (see nav.css usage
+   in the screen markup). */
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .nx-sidebar { top: var(--nx-sidebar-top-md, var(--nx-sidebar-top, 0px)); }
+}
+@media (min-width: 1024px) {
+  .nx-sidebar { top: var(--nx-sidebar-top-lg, var(--nx-sidebar-top, 0px)); }
+}
+
+.nx-side-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 20px 18px;
+  flex: none;
+}
+
+.nx-side-brand img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.nx-side-brand .nx-brand-name {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  line-height: 20px;
+}
+
+.nx-side-brand .nx-brand-sub {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--nx-sidebar-label);
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+.nx-side-section {
+  font-size: 10px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nx-sidebar-label);
+  padding: 18px 20px 6px;
+}
+
+.nx-side-list { display: flex; flex-direction: column; gap: 2px; padding: 0 12px; }
+
+.nx-side-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  border-left: 3px solid transparent;
+  color: var(--nx-sidebar-muted);
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nx-side-item .nx-icon { font-size: 20px; flex: none; }
+
+.nx-side-item:hover { background: var(--nx-sidebar-hover); color: var(--nx-sidebar-fg); }
+
+.nx-side-item.nx-active {
+  background: rgba(0, 63, 177, 0.22);
+  border-left-color: var(--nx-primary);
+  color: #ffffff;
+}
+
+.nx-side-item.nx-active .nx-icon { font-variation-settings: "FILL" 1, "wght" 500, "GRAD" 0, "opsz" 24; }
+
+.nx-side-foot { margin-top: auto; border-top: 1px solid rgba(148, 163, 184, 0.16); padding: 10px 12px 20px; }
+
+/* ------------------------------------------------------------- Responsive */
+@media (max-width: 767.98px) {
+  .nx-sidebar { display: none; }
+}
+
+@media (min-width: 768px) {
+  .nx-bar { display: none; }
+  .nx-sidebar { display: flex; }
+}

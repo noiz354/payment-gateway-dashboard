@@ -110,7 +110,8 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head>
+  <link rel="stylesheet" href="../_shared/nav.css"/>
+</head>
 <body class="text-on-surface min-h-screen flex flex-col font-body-md">
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full z-50 bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-on-surface-variant flex justify-between items-center px-gutter h-16 max-w-container-max mx-auto">
@@ -123,44 +124,9 @@
 </div>
 </header>
 <!-- SideNav for Desktop -->
-<nav class="hidden lg:flex flex-col h-full py-stack-lg fixed left-0 top-16 w-sidebar-width bg-surface-container-lowest dark:bg-inverse-surface border-r border-outline-variant dark:border-on-surface-variant z-40 transition-all duration-200 ease-in-out">
-<div class="px-4 mb-8">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
-<span class="material-symbols-outlined text-secondary" data-icon="person">person</span>
-</div>
-<div>
-<div class="font-body-md text-body-md text-primary dark:text-primary-fixed font-semibold">Operations Lead</div>
-<div class="font-body-sm text-body-sm text-secondary">Verified Merchant</div>
-<div class="font-label-caps text-label-caps text-secondary mt-1">Tier 3</div>
-</div>
-</div>
-</div>
-<div class="flex flex-col gap-2">
-<a class="flex items-center gap-3 px-6 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant transition-colors" href="/screens/mobile/dashboard_home/code.html">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-<span class="font-body-md text-body-md">Dashboard</span>
-</a>
-<a class="flex items-center gap-3 px-6 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant transition-colors" href="#">
-<span class="material-symbols-outlined" data-icon="store">store</span>
-<span class="font-body-md text-body-md">Merchant Profile</span>
-</a>
-<a class="flex items-center gap-3 px-6 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant transition-colors" href="/screens/mobile/balance_history/code.html">
-<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
-<span class="font-body-md text-body-md">Settlements</span>
-</a>
-<a class="flex items-center gap-3 px-6 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant transition-colors" href="/screens/mobile/webhook_logs/code.html">
-<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
-<span class="font-body-md text-body-md">Audit Logs</span>
-</a>
-<a class="flex items-center gap-3 px-6 py-3 text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-on-secondary-fixed-variant transition-colors" href="/screens/mobile/developer_settings/code.html">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-<span class="font-body-md text-body-md">Settings</span>
-</a>
-</div>
-</nav>
+
 <!-- Main Content -->
-<main class="flex-1 mt-16 lg:ml-sidebar-width p-gutter max-w-container-max mx-auto w-full mb-20 md:mb-0">
+<main class="flex-1 mt-16 md:ml-sidebar-width p-gutter max-w-container-max mx-auto w-full mb-20 md:mb-0">
 <div class="max-w-3xl mx-auto">
 <div class="text-center mb-10">
 <h1 class="font-headline-lg text-headline-lg text-on-surface mb-2">Identity Verification</h1>
@@ -222,23 +188,9 @@
 </div>
 </main>
 <!-- BottomNavBar for Mobile -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-stack-sm pb-safe bg-surface-container-lowest dark:bg-inverse-surface border-t border-outline-variant dark:border-on-surface-variant z-50">
-<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-secondary-fixed-dim px-4 py-1 hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform duration-150" href="/screens/mobile/payment_links_invoices/code.html">
-<span class="material-symbols-outlined" data-icon="payments">payments</span>
-<span class="font-label-caps text-label-caps">Payments</span>
-</a>
-<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl px-4 py-1 active:scale-95 transition-transform duration-150" href="#">
-<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
-<span class="font-label-caps text-label-caps">KYC</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-secondary-fixed-dim px-4 py-1 hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform duration-150" href="#">
-<span class="material-symbols-outlined" data-icon="group">group</span>
-<span class="font-label-caps text-label-caps">Users</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-secondary-fixed-dim px-4 py-1 hover:text-primary dark:hover:text-primary-fixed active:scale-95 transition-transform duration-150" href="/screens/mobile/custom_reports_builder/code.html">
-<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
-<span class="font-label-caps text-label-caps">Reports</span>
-</a>
-</nav>
+
 <script src="/screens/navigation.js"></script>
+<!-- Shared navigation chrome — Single Source of Truth: screens/mobile/_shared -->
+<div id="app-nav-root" style="--nx-sidebar-top: 4rem"></div>
+<script src="../_shared/nav.js"></script>
 </body></html>

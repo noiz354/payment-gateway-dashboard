@@ -117,57 +117,14 @@
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
     </style>
+<link rel="stylesheet" href="../_shared/nav.css"/>
 </head>
 <body class="bg-surface text-on-surface font-body-md min-h-screen pb-24 md:pb-0">
 <!-- Global Test Mode Banner -->
 <div class="bg-warning text-white font-label-caps text-label-caps text-center py-2 uppercase tracking-widest fixed top-0 w-full z-[60]">
         TEST MODE — Data is not live
     </div>
-<!-- Side Navigation (Web) -->
-<nav class="hidden md:flex bg-inverse-surface dark:bg-inverse-surface w-[260px] h-full fixed left-0 top-0 pt-8 flex-col h-full py-stack-lg z-50 overflow-y-auto">
-<div class="px-gutter mb-8 flex items-center gap-3">
-<img alt="Business Logo" class="w-10 h-10 rounded" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByM5ZGw25jiHBEHqCbnX3pXLCDq4OMK2Y7byxy6yzBtecR3O0aAdrxMLlRWnMW7m04t0mFbjoczTUV7c7GaEZNSRsrEQqlSiUKvV4bapZ0hfKkz24e6wdpUMhEgTgCzYiJIbeX-M-LbHx6lFP7X53P9A104x8l_mKV5dyoc03PbuS80_9KlezvXa_hjpI9ru0JzkffN-r0pFEaqKRUkYti7VX_dv8avqoYm5luxf6_0xhc6-heLm9U"/>
-<div>
-<h1 class="font-headline-md text-headline-md font-bold text-on-primary-fixed text-white">Imanino Corps</h1>
-<p class="font-label-caps text-label-caps text-secondary-fixed-dim">Enterprise Account</p>
-<p class="font-label-caps text-label-caps text-primary-fixed-dim mt-1">Live Mode</p>
-</div>
-</div>
-<div class="flex flex-col gap-1 px-4">
-<a class="text-primary-fixed-dim border-l-4 border-primary-fixed-dim bg-on-secondary-fixed-variant/20 font-bold flex items-center gap-3 px-4 py-3 rounded-r-xl transition-all duration-200" href="/screens/mobile/dashboard_home/code.html">
-<span class="material-symbols-outlined" data-icon="home" data-weight="fill">home</span>
-<span>Home</span>
-</a>
-<a class="text-secondary-fixed-dim hover:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200" href="/screens/mobile/balance_history/code.html">
-<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
-<span>Balance</span>
-</a>
-<a class="text-secondary-fixed-dim hover:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200" href="/screens/mobile/transaction_ledger/code.html">
-<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
-<span>Transactions</span>
-</a>
-<a class="text-secondary-fixed-dim hover:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200" href="/screens/mobile/payment_links_invoices/code.html">
-<span class="material-symbols-outlined" data-icon="link">link</span>
-<span>Payment Links</span>
-</a>
-<a class="text-secondary-fixed-dim hover:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200" href="/screens/mobile/subscription_management/code.html">
-<span class="material-symbols-outlined" data-icon="autorenew">autorenew</span>
-<span>Subscriptions</span>
-</a>
-<a class="text-secondary-fixed-dim hover:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200" href="/screens/mobile/payment_links_invoices/code.html#qr-codes">
-<span class="material-symbols-outlined" data-icon="qr_code">qr_code</span>
-<span>QR Codes</span>
-</a>
-<a class="text-secondary-fixed-dim hover:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200" href="/screens/mobile/payout_settings/code.html">
-<span class="material-symbols-outlined" data-icon="payments">payments</span>
-<span>Disbursements</span>
-</a>
-<a class="text-secondary-fixed-dim hover:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 mt-auto" href="/screens/mobile/developer_settings/code.html">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-<span>Settings</span>
-</a>
-</div>
-</nav>
+
 <!-- Top App Bar (Web) -->
 <header class="hidden md:flex bg-surface dark:bg-surface-dim justify-between items-center h-14 px-gutter ml-[260px] w-[calc(100%-260px)] docked full-width top-8 fixed z-40">
 <div class="flex items-center gap-4">
@@ -311,30 +268,11 @@
 </div>
 </div>
 </main>
-<!-- Bottom Navigation Bar (Mobile only) -->
-<nav class="md:hidden bg-surface-container-highest dark:bg-inverse-surface fixed bottom-0 left-0 w-full flex justify-around items-center h-16 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] z-50">
-<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 scale-95 transition-transform active:bg-surface-variant" href="/screens/mobile/dashboard_home/code.html">
-<span class="material-symbols-outlined" data-icon="home" data-weight="fill">home</span>
-<span class="font-label-caps text-label-caps mt-1">Home</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant scale-95 transition-transform active:bg-surface-variant px-4 py-1" href="/screens/mobile/balance_history/code.html">
-<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
-<span class="font-label-caps text-label-caps mt-1">Balance</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant scale-95 transition-transform active:bg-surface-variant px-4 py-1" href="/screens/mobile/transaction_ledger/code.html">
-<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
-<span class="font-label-caps text-label-caps mt-1">Transact</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant scale-95 transition-transform active:bg-surface-variant px-4 py-1" href="/screens/mobile/payment_links_invoices/code.html">
-<span class="material-symbols-outlined" data-icon="link">link</span>
-<span class="font-label-caps text-label-caps mt-1">Links</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant scale-95 transition-transform active:bg-surface-variant px-4 py-1" href="/screens/mobile/developer_settings/code.html">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-<span class="font-label-caps text-label-caps mt-1">Settings</span>
-</a>
-</nav>
+
 <script src="/screens/xendit-client.js"></script>
 <script>XenditDashboard.init('dashboard', '/api/transactions');</script>
 <script src="/screens/navigation.js"></script>
+<!-- Shared navigation chrome — Single Source of Truth: screens/mobile/_shared -->
+<div id="app-nav-root" style="--nx-sidebar-top: 2rem"></div>
+<script src="../_shared/nav.js"></script>
 </body></html>

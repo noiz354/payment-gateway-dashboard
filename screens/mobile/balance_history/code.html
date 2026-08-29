@@ -122,79 +122,10 @@
             border-radius: 4px;
         }
     </style>
+<link rel="stylesheet" href="../_shared/nav.css"/>
 </head>
 <body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex">
-<!-- Shared Component: NavigationDrawer (Desktop) -->
-<nav class="hidden md:flex flex-col w-[260px] h-full fixed left-0 top-0 bg-inverse-surface py-stack-lg z-40">
-<!-- Profile Header -->
-<div class="px-gutter mb-8 flex items-center space-x-3">
-<div class="w-10 h-10 rounded bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-lg">
-                I
-            </div>
-<div>
-<h2 class="font-headline-md text-headline-md font-bold text-on-primary-fixed">Imanino Corps</h2>
-<p class="font-body-sm text-body-sm text-secondary-fixed-dim">Enterprise Account</p>
-<div class="mt-1 flex items-center space-x-1">
-<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-<span class="font-label-caps text-label-caps text-secondary-fixed-dim uppercase">Live Mode</span>
-</div>
-</div>
-</div>
-<!-- Navigation Links -->
-<ul class="flex flex-col flex-1 space-y-1">
-<!-- Inactive -->
-<li>
-<a class="flex items-center space-x-3 px-gutter py-2 text-secondary-fixed-dim hover:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer transition-all duration-200" href="/screens/mobile/dashboard_home/code.html">
-<span class="material-symbols-outlined">home</span>
-<span>Home</span>
-</a>
-</li>
-<!-- Active -->
-<li>
-<a class="flex items-center space-x-3 px-gutter py-2 text-primary-fixed-dim border-l-4 border-primary-fixed-dim bg-on-secondary-fixed-variant/20 font-bold hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer transition-all duration-200" href="/screens/mobile/balance_history/code.html">
-<span class="material-symbols-outlined">account_balance</span>
-<span>Balance</span>
-</a>
-</li>
-<!-- Inactive -->
-<li>
-<a class="flex items-center space-x-3 px-gutter py-2 text-secondary-fixed-dim hover:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer transition-all duration-200" href="/screens/mobile/transaction_ledger/code.html">
-<span class="material-symbols-outlined">receipt_long</span>
-<span>Transactions</span>
-</a>
-</li>
-<li>
-<a class="flex items-center space-x-3 px-gutter py-2 text-secondary-fixed-dim hover:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer transition-all duration-200" href="/screens/mobile/payment_links_invoices/code.html">
-<span class="material-symbols-outlined">link</span>
-<span>Payment Links</span>
-</a>
-</li>
-<li>
-<a class="flex items-center space-x-3 px-gutter py-2 text-secondary-fixed-dim hover:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer transition-all duration-200" href="/screens/mobile/subscription_management/code.html">
-<span class="material-symbols-outlined">autorenew</span>
-<span>Subscriptions</span>
-</a>
-</li>
-<li>
-<a class="flex items-center space-x-3 px-gutter py-2 text-secondary-fixed-dim hover:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer transition-all duration-200" href="/screens/mobile/payment_links_invoices/code.html#qr-codes">
-<span class="material-symbols-outlined">qr_code</span>
-<span>QR Codes</span>
-</a>
-</li>
-<li>
-<a class="flex items-center space-x-3 px-gutter py-2 text-secondary-fixed-dim hover:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer transition-all duration-200" href="/screens/mobile/payout_settings/code.html">
-<span class="material-symbols-outlined">payments</span>
-<span>Disbursements</span>
-</a>
-</li>
-<li class="mt-auto">
-<a class="flex items-center space-x-3 px-gutter py-2 text-secondary-fixed-dim hover:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 transition-colors cursor-pointer transition-all duration-200" href="/screens/mobile/developer_settings/code.html">
-<span class="material-symbols-outlined">settings</span>
-<span>Settings</span>
-</a>
-</li>
-</ul>
-</nav>
+
 <!-- Main Content Wrapper -->
 <div class="flex-1 w-full md:ml-[260px] md:w-[calc(100%-260px)] min-h-screen flex flex-col pb-20 md:pb-0">
 <!-- Shared Component: TopAppBar -->
@@ -219,7 +150,7 @@
 </button>
 </header>
 <!-- Main Canvas -->
-<main class="flex-1 p-gutter max-w-container-max mx-auto w-full space-y-stack-lg">
+<main class="flex-1 p-gutter pb-24 md:pb-gutter max-w-container-max mx-auto w-full space-y-stack-lg">
 <!-- Page Header Area (Desktop) -->
 <div class="hidden md:flex justify-between items-end">
 <div>
@@ -356,35 +287,12 @@
 </main>
 </div>
 <!-- Shared Component: BottomNavBar (Mobile) -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 bg-surface-container-highest shadow-lg border-t border-outline-variant z-50">
-<!-- Inactive -->
-<a class="flex flex-col items-center justify-center text-on-surface-variant w-full h-full scale-95 transition-transform active:bg-surface-variant" href="/screens/mobile/dashboard_home/code.html">
-<span class="material-symbols-outlined mb-1">home</span>
-<span class="font-label-caps text-label-caps">Home</span>
-</a>
-<!-- Active -->
-<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 w-full h-full scale-95 transition-transform" href="/screens/mobile/balance_history/code.html">
-<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">account_balance</span>
-<span class="font-label-caps text-label-caps">Balance</span>
-</a>
-<!-- Inactive -->
-<a class="flex flex-col items-center justify-center text-on-surface-variant w-full h-full scale-95 transition-transform active:bg-surface-variant" href="/screens/mobile/transaction_ledger/code.html">
-<span class="material-symbols-outlined mb-1">receipt_long</span>
-<span class="font-label-caps text-label-caps">Transact</span>
-</a>
-<!-- Inactive -->
-<a class="flex flex-col items-center justify-center text-on-surface-variant w-full h-full scale-95 transition-transform active:bg-surface-variant" href="/screens/mobile/payment_links_invoices/code.html">
-<span class="material-symbols-outlined mb-1">link</span>
-<span class="font-label-caps text-label-caps">Links</span>
-</a>
-<!-- Inactive -->
-<a class="flex flex-col items-center justify-center text-on-surface-variant w-full h-full scale-95 transition-transform active:bg-surface-variant" href="/screens/mobile/developer_settings/code.html">
-<span class="material-symbols-outlined mb-1">settings</span>
-<span class="font-label-caps text-label-caps">Settings</span>
-</a>
-</nav>
+
 
 <script src="/screens/xendit-client.js"></script>
 <script>XenditDashboard.init('balance', '/api/balance?currency=IDR');</script>
 <script src="/screens/navigation.js"></script>
+<!-- Shared navigation chrome — Single Source of Truth: screens/mobile/_shared -->
+<div id="app-nav-root"></div>
+<script src="../_shared/nav.js"></script>
 </body></html>

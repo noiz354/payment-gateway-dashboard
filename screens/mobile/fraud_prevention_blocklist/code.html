@@ -175,6 +175,7 @@
         body { background-color: #F8FAFC; }
         .table-row-hover:hover { background-color: #F1F5F9; }
     </style>
+<link rel="stylesheet" href="../_shared/nav.css"/>
 </head>
 <body class="font-body-md text-on-surface bg-background antialiased min-h-screen flex flex-col">
 <!-- TopAppBar -->
@@ -183,36 +184,15 @@
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance</span>
 <span class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">Imanino Corps</span>
 </div>
-<!-- Web Navigation Nav Cluster (Hidden on mobile) -->
-<nav class="hidden md:flex items-center gap-6">
-<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-1 rounded transition-colors duration-200 font-label-caps text-label-caps flex items-center gap-1" href="/screens/mobile/dashboard_home/code.html">
-<span class="material-symbols-outlined text-[16px]">home</span>
-                Home
-            </a>
-<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-1 rounded transition-colors duration-200 font-label-caps text-label-caps flex items-center gap-1" href="/screens/mobile/balance_history/code.html">
-<span class="material-symbols-outlined text-[16px]">account_balance_wallet</span>
-                Balance
-            </a>
-<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-1 rounded transition-colors duration-200 font-label-caps text-label-caps flex items-center gap-1" href="/screens/mobile/transaction_ledger/code.html">
-<span class="material-symbols-outlined text-[16px]">receipt_long</span>
-                Transactions
-            </a>
-<a class="text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-1 rounded transition-colors duration-200 font-label-caps text-label-caps flex items-center gap-1" href="/screens/mobile/payment_links_invoices/code.html">
-<span class="material-symbols-outlined text-[16px]">link</span>
-                Links
-            </a>
-<a class="text-primary dark:text-inverse-primary bg-surface-container hover:bg-surface-container dark:hover:bg-surface-container-high px-3 py-1 rounded transition-colors duration-200 font-label-caps text-label-caps flex items-center gap-1" href="/screens/mobile/developer_settings/code.html">
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">settings</span>
-                Settings
-            </a>
-</nav>
+
 <button class="text-on-surface-variant hover:bg-surface-container p-1 rounded-full transition-colors duration-200 flex items-center justify-center">
 <span class="material-symbols-outlined">notifications</span>
 </button>
 </header>
 <div class="flex flex-1 pt-12 md:pl-sidebar-width w-full max-w-container-max mx-auto">
-<!-- Sidebar (Desktop only) -->
-<aside class="hidden md:block fixed left-0 top-12 bottom-0 w-sidebar-width bg-[#0F172A] border-r border-outline-variant overflow-y-auto">
+
+<!-- In-page section navigation (Fraud & Risk) -->
+<aside class="hidden md:block w-sidebar-width shrink-0 sticky top-12 self-start bg-[#0F172A] rounded-xl overflow-hidden">
 <nav class="p-gutter flex flex-col gap-2">
 <div class="font-label-caps text-label-caps text-on-surface-variant mb-2 pl-3">Fraud &amp; Risk</div>
 <a class="flex items-center gap-3 px-3 py-2 text-surface-container-low hover:bg-surface-variant/10 rounded-lg transition-colors" href="#">
@@ -236,8 +216,9 @@
 </div>
 </nav>
 </aside>
+
 <!-- Main Content -->
-<main class="flex-1 p-gutter w-full">
+<main class="flex-1 p-gutter pb-24 md:pb-gutter w-full">
 <!-- Page Header -->
 <div class="flex flex-col md:flex-row md:items-center justify-between mb-stack-lg gap-4">
 <div>
@@ -366,27 +347,9 @@
 </main>
 </div>
 <!-- BottomNavBar (Mobile only) -->
-<nav class="md:hidden fixed bottom-0 w-full z-50 bg-surface-container-lowest dark:bg-surface-dim border-t border-outline-variant dark:border-outline flex justify-around items-center h-16 px-2">
-<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-fixed-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest scale-95 active:scale-90 transition-transform duration-150 p-2 rounded-lg" href="/screens/mobile/dashboard_home/code.html">
-<span class="material-symbols-outlined">home</span>
-<span class="font-label-caps text-label-caps mt-1">Home</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-fixed-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest scale-95 active:scale-90 transition-transform duration-150 p-2 rounded-lg" href="/screens/mobile/balance_history/code.html">
-<span class="material-symbols-outlined">account_balance_wallet</span>
-<span class="font-label-caps text-label-caps mt-1">Balance</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-fixed-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest scale-95 active:scale-90 transition-transform duration-150 p-2 rounded-lg" href="/screens/mobile/transaction_ledger/code.html">
-<span class="material-symbols-outlined">receipt_long</span>
-<span class="font-label-caps text-label-caps mt-1">Transactions</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-secondary-fixed-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest scale-95 active:scale-90 transition-transform duration-150 p-2 rounded-lg" href="/screens/mobile/payment_links_invoices/code.html">
-<span class="material-symbols-outlined">link</span>
-<span class="font-label-caps text-label-caps mt-1">Links</span>
-</a>
-<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-3 py-1 scale-95 active:scale-90 transition-transform duration-150" href="/screens/mobile/developer_settings/code.html">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
-<span class="font-label-caps text-label-caps mt-1">Settings</span>
-</a>
-</nav>
+
 <script src="/screens/navigation.js"></script>
+<!-- Shared navigation chrome — Single Source of Truth: screens/mobile/_shared -->
+<div id="app-nav-root" style="--nx-sidebar-top: 3rem"></div>
+<script src="../_shared/nav.js"></script>
 </body></html>

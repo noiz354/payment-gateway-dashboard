@@ -188,6 +188,7 @@
             box-shadow: 0 0 0 2px rgba(0, 63, 177, 0.2);
         }
     </style>
+<link rel="stylesheet" href="../_shared/nav.css"/>
 </head>
 <body class="font-body-md text-body-md antialiased h-screen flex flex-col md:flex-row overflow-hidden">
 <!-- TopAppBar (Web & Mobile Shell - Desktop hidden in flex-row, visible on mobile) -->
@@ -200,57 +201,7 @@
 <span class="material-symbols-outlined">notifications</span>
 </button>
 </header>
-<!-- Side Navigation (Web Shell - Desktop only) -->
-<aside class="hidden md:flex flex-col w-sidebar-width h-full bg-[#0F172A] text-white shrink-0 z-40 fixed inset-y-0 left-0">
-<div class="px-6 py-5 border-b border-gray-800 flex items-center justify-between">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-inverse-primary" data-weight="fill" style="font-variation-settings: 'FILL' 1;">account_balance</span>
-<span class="font-headline-md text-headline-md font-bold tracking-tight text-white">Imanino Corps</span>
-</div>
-</div>
-<nav class="flex-1 overflow-y-auto py-4 px-3 space-y-1">
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors" href="/screens/mobile/dashboard_home/code.html">
-<span class="material-symbols-outlined">home</span>
-<span class="font-body-sm text-body-sm">Home</span>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors" href="/screens/mobile/balance_history/code.html">
-<span class="material-symbols-outlined">account_balance_wallet</span>
-<span class="font-body-sm text-body-sm">Balance</span>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors" href="/screens/mobile/transaction_ledger/code.html">
-<span class="material-symbols-outlined">receipt_long</span>
-<span class="font-body-sm text-body-sm">Transactions</span>
-</a>
-<div class="pt-4 pb-2 px-3">
-<p class="font-label-caps text-label-caps text-gray-500 uppercase tracking-wider">Developers</p>
-</div>
-<!-- Active State Indicated by Primary Blue Tint & Border -->
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white bg-primary/20 border-l-4 border-primary transition-colors" href="#">
-<span class="material-symbols-outlined">key</span>
-<span class="font-body-sm text-body-sm font-medium">API Keys</span>
-</a>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors ml-4 border-l border-gray-700" href="#">
-<span class="material-symbols-outlined" style="font-size: 18px;">webhook</span>
-<span class="font-body-sm text-body-sm">Webhooks</span>
-</a>
-<div class="pt-4 pb-2 px-3">
-<p class="font-label-caps text-label-caps text-gray-500 uppercase tracking-wider">System</p>
-</div>
-<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-800 transition-colors" href="/screens/mobile/developer_settings/code.html">
-<span class="material-symbols-outlined">settings</span>
-<span class="font-body-sm text-body-sm">Settings</span>
-</a>
-</nav>
-<div class="p-4 border-t border-gray-800">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded bg-gray-700 flex items-center justify-center text-sm font-medium">AD</div>
-<div class="flex flex-col">
-<span class="text-sm font-medium text-white">Admin User</span>
-<span class="text-xs text-gray-400">admin@imanino.corps</span>
-</div>
-</div>
-</div>
-</aside>
+
 <!-- Main Content Canvas -->
 <main class="flex-1 flex flex-col min-w-0 md:ml-sidebar-width pt-12 md:pt-0 h-full overflow-y-auto pb-20 md:pb-0">
 <!-- Optional Top Bar for Desktop Context -->
@@ -434,24 +385,9 @@
 </div>
 </main>
 <!-- BottomNavBar (Mobile Shell - Hidden on md and up) -->
-<nav class="md:hidden flex justify-around items-center h-16 w-full px-2 bg-surface-container-lowest border-t border-outline-variant fixed bottom-0 z-50">
-<a class="flex flex-col items-center justify-center text-on-secondary-container hover:bg-surface-container-highest scale-95 active:scale-90 transition-transform duration-150 p-2 rounded-lg" href="/screens/mobile/dashboard_home/code.html">
-<span class="material-symbols-outlined">home</span>
-<span class="font-label-caps text-label-caps mt-1">Home</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-secondary-container hover:bg-surface-container-highest scale-95 active:scale-90 transition-transform duration-150 p-2 rounded-lg" href="/screens/mobile/balance_history/code.html">
-<span class="material-symbols-outlined">account_balance_wallet</span>
-<span class="font-label-caps text-label-caps mt-1">Balance</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-secondary-container hover:bg-surface-container-highest scale-95 active:scale-90 transition-transform duration-150 p-2 rounded-lg" href="/screens/mobile/transaction_ledger/code.html">
-<span class="material-symbols-outlined">receipt_long</span>
-<span class="font-label-caps text-label-caps mt-1">Transactions</span>
-</a>
-<!-- Active Tab indicated by style_active_navigation classes from JSON translated -->
-<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-3 py-1 scale-95 active:scale-90 transition-transform duration-150" href="/screens/mobile/developer_settings/code.html">
-<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">settings</span>
-<span class="font-label-caps text-label-caps mt-1">Settings</span>
-</a>
-</nav>
+
 <script src="/screens/navigation.js"></script>
+<!-- Shared navigation chrome — Single Source of Truth: screens/mobile/_shared -->
+<div id="app-nav-root"></div>
+<script src="../_shared/nav.js"></script>
 </body></html>

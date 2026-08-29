@@ -128,53 +128,12 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head>
+  <link rel="stylesheet" href="../_shared/nav.css"/>
+</head>
 <body class="flex h-full w-full bg-background text-on-surface">
-<!-- Sidebar Navigation -->
-<nav class="hidden lg:flex flex-col h-full py-stack-lg fixed left-0 top-0 w-sidebar-width bg-surface-container-lowest border-r border-outline-variant z-40">
-<div class="px-gutter mb-stack-lg flex items-center gap-stack-sm">
-<span class="material-symbols-outlined text-primary font-headline-md filled">account_balance</span>
-<span class="font-headline-md text-headline-md text-primary tracking-tight">LedgerScale</span>
-</div>
-<div class="px-gutter mb-stack-lg">
-<div class="flex items-center gap-stack-sm p-stack-sm bg-surface-container-low rounded-lg">
-<img class="w-8 h-8 rounded-full object-cover" data-alt="A professional headshot of a female executive in a modern office setting. She is wearing a dark navy blazer over a crisp white blouse. The lighting is soft and natural, emphasizing a corporate, authoritative tone. The background is a slightly blurred office environment with glass partitions, maintaining a bright, light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFaKvxY_MwLnQHq-nl0xC9tRaPI_3wDuVLkcuFWErmL5binEnKiWWGJVh-gf24VyZfXrG1n1hcWeHmyGCFHKrPMSKjhGnPbmfaO3NgHibzsYnEgmw39Bz11uEFAgAMnf35uFSKM5q4lnXX6RCAvqV4C5iTjzgptbefu_rQfKRM0eWOLZYqn2k1zyWc8u7bDq_lNPhQyupeaJFf_c0ZABG8C6AEjRQzs7Pt8ITQGmPeDd19hAfyecMz"/>
-<div>
-<p class="font-body-sm text-body-sm font-semibold text-on-surface">Operations Lead</p>
-<p class="font-label-caps text-[10px] text-secondary">Verified Merchant</p>
-</div>
-</div>
-</div>
-<div class="flex-1 flex flex-col gap-1 px-stack-sm overflow-y-auto">
-<a class="flex items-center gap-stack-sm px-stack-sm py-2 rounded-md text-secondary hover:bg-surface-container-low transition-all duration-200 ease-in-out" href="/screens/mobile/dashboard_home/code.html">
-<span class="material-symbols-outlined">dashboard</span>
-<span class="font-body-md text-body-md">Dashboard</span>
-</a>
-<a class="flex items-center gap-stack-sm px-stack-sm py-2 rounded-md text-secondary hover:bg-surface-container-low transition-all duration-200 ease-in-out" href="#">
-<span class="material-symbols-outlined">store</span>
-<span class="font-body-md text-body-md">Merchant Profile</span>
-</a>
-<a class="flex items-center gap-stack-sm px-stack-sm py-2 rounded-md text-secondary hover:bg-surface-container-low transition-all duration-200 ease-in-out" href="/screens/mobile/balance_history/code.html">
-<span class="material-symbols-outlined">account_balance_wallet</span>
-<span class="font-body-md text-body-md">Settlements</span>
-</a>
-<a class="flex items-center gap-stack-sm px-stack-sm py-2 rounded-md text-secondary hover:bg-surface-container-low transition-all duration-200 ease-in-out" href="/screens/mobile/webhook_logs/code.html">
-<span class="material-symbols-outlined">history_edu</span>
-<span class="font-body-md text-body-md">Audit Logs</span>
-</a>
-<!-- Active Tab Intent Fallback: "Reports" aligns with Custom Reports Builder -->
-<a class="flex items-center gap-stack-sm px-stack-sm py-2 bg-secondary-container text-on-secondary-container border-l-4 border-primary transition-all duration-200 ease-in-out" href="/screens/mobile/custom_reports_builder/code.html">
-<span class="material-symbols-outlined filled">analytics</span>
-<span class="font-body-md text-body-md font-semibold">Reports</span>
-</a>
-<a class="flex items-center gap-stack-sm px-stack-sm py-2 rounded-md text-secondary hover:bg-surface-container-low transition-all duration-200 ease-in-out" href="/screens/mobile/developer_settings/code.html">
-<span class="material-symbols-outlined">settings</span>
-<span class="font-body-md text-body-md">Settings</span>
-</a>
-</div>
-</nav>
+
 <!-- Main Content Area -->
-<div class="flex-1 lg:ml-sidebar-width flex flex-col min-h-screen">
+<div class="flex-1 md:ml-sidebar-width flex flex-col min-h-screen">
 <!-- Top App Bar (Mobile) -->
 <header class="lg:hidden fixed top-0 w-full z-50 flex justify-between items-center px-gutter h-16 bg-surface-container-lowest border-b border-outline-variant flat no shadows">
 <div class="flex items-center gap-stack-sm">
@@ -186,7 +145,7 @@
 </button>
 </header>
 <!-- Main Canvas -->
-<main class="flex-1 w-full max-w-container-max mx-auto p-gutter pt-20 lg:pt-gutter overflow-y-auto">
+<main class="flex-1 w-full max-w-container-max mx-auto p-gutter pt-20 lg:pt-gutter pb-24 md:pb-gutter overflow-y-auto">
 <div class="mb-stack-lg">
 <h1 class="font-headline-xl text-headline-xl text-on-surface">Custom Reports Builder</h1>
 <p class="font-body-md text-body-md text-secondary mt-1">Configure and generate detailed operational reports.</p>
@@ -369,27 +328,11 @@
 </div>
 </main>
 </div>
-<!-- Bottom Navigation (Mobile) -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 px-stack-sm pb-safe bg-surface-container-lowest border-t border-outline-variant z-50 flat no shadows">
-<a class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-1 hover:text-primary transition-colors" href="/screens/mobile/payment_links_invoices/code.html">
-<span class="material-symbols-outlined">payments</span>
-<span class="font-label-caps text-label-caps mt-1">Payments</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-1 hover:text-primary transition-colors" href="#">
-<span class="material-symbols-outlined">verified_user</span>
-<span class="font-label-caps text-label-caps mt-1">KYC</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-secondary-container px-4 py-1 hover:text-primary transition-colors" href="#">
-<span class="material-symbols-outlined">group</span>
-<span class="font-label-caps text-label-caps mt-1">Users</span>
-</a>
-<!-- Active Tab Intent Fallback: "Reports" aligns with Custom Reports Builder -->
-<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-95 transition-transform duration-150" href="/screens/mobile/custom_reports_builder/code.html">
-<span class="material-symbols-outlined filled">analytics</span>
-<span class="font-label-caps text-label-caps mt-1 font-bold">Reports</span>
-</a>
-</nav>
+
 <script src="/screens/xendit-client.js"></script>
 <script>XenditDashboard.init('report', '/api/transactions');</script>
 <script src="/screens/navigation.js"></script>
+<!-- Shared navigation chrome — Single Source of Truth: screens/mobile/_shared -->
+<div id="app-nav-root" style="--nx-sidebar-top-md: 4rem"></div>
+<script src="../_shared/nav.js"></script>
 </body></html>
