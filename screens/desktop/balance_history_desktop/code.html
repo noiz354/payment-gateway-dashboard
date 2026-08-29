@@ -445,4 +445,36 @@
 </div>
 </main>
 </div>
+
+<script>
+// Live Xendit data is loaded by the server-side BFF; no secret is exposed here.
+(async function loadXenditData() {
+  const endpoint = '/api/balance?currency=IDR';
+  try {
+    const response = await fetch(endpoint, { headers: { Accept: 'application/json' } });
+    if (!response.ok) throw new Error('HTTP ' + response.status);
+    const payload = await response.json();
+    const records = Array.isArray(payload) ? payload : (payload.data || [payload]);
+    document.querySelectorAll('tbody').forEach((tbody) => {
+      if (!records.length) return;
+      tbody.innerHTML = records.map((record) => {
+        const cells = Object.entries(record).slice(0, 6).map(([key, value]) =>
+          `<td class="px-3 py-2 text-sm" data-xendit-field="${key}">${typeof value === 'object' ? JSON.stringify(value) : value ?? ''}</td>`).join('');
+        return `<tr>${cells}</tr>`;
+      }).join('');
+    });
+    const marker = document.createElement('div');
+    marker.dataset.xenditLive = 'true';
+    marker.className = 'fixed bottom-3 right-3 z-50 rounded bg-emerald-100 px-3 py-2 text-xs text-emerald-800 shadow';
+    marker.textContent = 'LIVE · Xendit';
+    document.body.appendChild(marker);
+  } catch (error) {
+    console.error('Unable to load Xendit data', error);
+    const marker = document.createElement('div');
+    marker.className = 'fixed bottom-3 right-3 z-50 rounded bg-red-100 px-3 py-2 text-xs text-red-800 shadow';
+    marker.textContent = 'Xendit data unavailable';
+    document.body.appendChild(marker);
+  }
+})();
+</script>
 </body></html>
